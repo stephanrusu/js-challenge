@@ -1,9 +1,16 @@
 <template>
-  <div />
+  <div class="columns">
+    <data-editor />
+  </div>
 </template>
 
 <script>
+import DataEditor from "@/components/DataEditor";
+
 export default {
-  name: "Home"
+  name: "Home",
+  components: {
+    DataEditor
+  }
 };
 </script>
