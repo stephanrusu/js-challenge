@@ -7,3 +7,64 @@ html,body {
   margin-bottom: 1.5rem;
   border: 1px solid #edf2f9;
 }
+
+.table {
+  thead {
+    th {
+      background-color: #f9fbfd;
+      text-transform: uppercase;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #95aac9;
+      border-bottom-width: 1px;
+      padding: 1rem 0.5rem;
+    }
+  }
+  tbody {
+    tr {
+      &:hover {
+        background-color: #f9fbfd;
+      }
+
+      &:nth-child(even) {
+        background-color: #f9fbfd;
+      }
+
+      td {
+        font-size: 0.875rem;
+        padding: 0.75rem 0.5rem;
+        color: $black-ter;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+.button {
+  &.is-transparent {
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+.icon-ellipsis {
+  width: $ellipsis-size;
+  height: $ellipsis-size;
+  background-color: #95aac9;
+  border-radius: $ellipsis-size;
+
+  &:before, &:after {
+    width: $ellipsis-size;
+    height: $ellipsis-size;
+    background-color: #95aac9;
+    border-radius: $ellipsis-size;
+    content: '';
+    position: absolute;
+  }
+
+  &:before {
+    left: 2px;
+  }
+
+  &:after {
+    right: 2px;
+  }
+}

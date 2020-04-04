@@ -11,9 +11,11 @@
   "dependencies": {
     "bulma": "^0.8.1",
     "core-js": "^3.6.4",
+    "lodash": "^4.17.15",
     "papaparse": "^5.2.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
+    "vue-svg-loader": "^0.16.0",
     "vuex": "^3.1.2"
   },
   "devDependencies": {

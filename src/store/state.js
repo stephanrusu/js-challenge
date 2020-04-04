@@ -1,5 +1,5 @@
 const state = {
-  file: {}
+  file: []
 };
 
 export default state;

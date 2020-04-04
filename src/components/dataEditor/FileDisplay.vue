@@ -1,26 +1,69 @@
 <template>
   <div>
-    <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+    <list-pagination
+      v-if="total > perPage"
+      :total="total"
+      :current.sync="current"
+      order="is-centered"
+      :per-page="perPage"
+    />
+    <table class="table is-fullwidth">
       <thead>
         <tr>
-          <th>Demo</th>
+          <th
+            v-for="(header, index) in Object.keys(fileData[0])"
+            :key="`header-${index}`"
+          >
+            {{ header }}
+          </th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Entry</td>
+        <tr v-for="(fileEntry, index) in fileData" :key="`fileEntry-${index}`">
+          <td
+            v-for="(entry, index) in Object.values(fileEntry)"
+            :key="`entry-${index}`"
+          >
+            {{ entry }}
+          </td>
+          <td>
+            <button class="button is-transparent is-small">
+              <span class="icon-ellipsis"></span>
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
+    <list-pagination
+      v-if="total > perPage"
+      :total="total"
+      :current.sync="current"
+      order="is-centered"
+      :per-page="perPage"
+    />
   </div>
 </template>
 
 <script>
+import ListPagination from "../ListPagination";
 export default {
   name: "FileDisplay",
+  components: {
+    ListPagination
+  },
+  data() {
+    return {
+      current: 1,
+      perPage: 50
+    };
+  },
   computed: {
     fileData() {
-      return this.$store.getters.file;
+      return this.$store.getters.paginateFile(this.perPage, this.current);
+    },
+    total() {
+      return this.$store.getters.fileData.length;
     }
   }
 };
