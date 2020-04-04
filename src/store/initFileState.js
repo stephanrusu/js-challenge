@@ -1,7 +1,8 @@
 const initFileState = {
   name: "",
   data: [],
-  active: {}
+  active: {},
+  activeIndex: -1
 };
 
 export default initFileState;

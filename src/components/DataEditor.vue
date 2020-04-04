@@ -1,7 +1,7 @@
 <template>
   <div class="column">
     <div class="box">
-      <h4>Data editor</h4>
+      <h4><strong>Data editor</strong></h4>
     </div>
 
     <div class="box" v-if="fileLength === 0">

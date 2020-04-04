@@ -4,13 +4,16 @@ const mutations = {
   setFileData(state, payload) {
     state.file.data = payload;
   },
-  setFileName(state, payload) {
+  updateFileName(state, payload) {
     state.file.name = payload;
   },
-  setActiveEnty(state, payload) {
-    state.file.active = payload;
+  setActiveEntry(state, payload) {
+    state.file.active = Object.assign({}, payload);
   },
-  clearAll(state) {
+  setActiveIndex(state, payload) {
+    state.file.activeIndex = payload;
+  },
+  clearFile(state) {
     state.file = Object.assign({}, initFileState);
   }
 };

@@ -1,6 +1,7 @@
 import Papa from "papaparse";
 
 const actions = {
+  // parse csv file obtained from file upload
   processFile({ commit }, payload) {
     Papa.parse(payload, {
       header: true,
@@ -17,11 +18,28 @@ const actions = {
       }
     });
   },
+
   updateFileName({ commit }, payload) {
-    commit("setFileName", payload);
+    commit("updateFileName", payload);
   },
+
   clearFile({ commit }) {
-    commit("clearAll");
+    commit("clearFile");
+  },
+
+  setActiveEntry({ commit, state }, payload) {
+    let indexEntry = state.file.data.indexOf(payload);
+    commit("setActiveEntry", payload);
+    commit("setActiveIndex", indexEntry);
+  },
+
+  clearActiveEntry({ commit }) {
+    commit("setActiveEntry", {});
+    commit("setActiveIndex", -1);
+  },
+
+  updateEntryData({ commit }, payload) {
+    commit("setFileData", payload);
   }
 };
 
