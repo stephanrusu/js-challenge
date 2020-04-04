@@ -7,7 +7,7 @@
       <button class="button is-info is-light" @click="exportData">
         Export
       </button>
-      <button class="button is-danger is-light" @click="exportData">
+      <button class="button is-danger is-light" @click="clearData">
         Clear
       </button>
     </div>

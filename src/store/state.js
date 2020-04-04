@@ -1,9 +1,7 @@
+import initFileState from "./initFileState";
+
 const state = {
-  file: {
-    name: "",
-    data: [],
-    active: {}
-  }
+  file: Object.assign({}, initFileState)
 };
 
 export default state;

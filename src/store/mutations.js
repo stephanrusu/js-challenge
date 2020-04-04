@@ -1,4 +1,4 @@
-import { state as initialState } from "./state";
+import initFileState from "./initFileState";
 
 const mutations = {
   setFileData(state, payload) {
@@ -11,7 +11,7 @@ const mutations = {
     state.file.active = payload;
   },
   clearAll(state) {
-    state.file = initialState;
+    state.file = Object.assign({}, initFileState);
   }
 };
 

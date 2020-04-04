@@ -19,6 +19,9 @@ const actions = {
   },
   updateFileName({ commit }, payload) {
     commit("setFileName", payload);
+  },
+  clearFile({ commit }) {
+    commit("clearAll");
   }
 };
 
