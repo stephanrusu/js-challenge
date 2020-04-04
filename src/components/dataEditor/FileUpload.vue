@@ -1,29 +1,27 @@
 <template>
-  <div>
-    <div class="file has-name is-right is-fullwidth">
-      <label class="file-label">
-        <input
-          class="file-input"
-          type="file"
-          name="resume"
-          @change="handleChangeFile"
-          accept="text/csv"
-        />
-        <span class="file-cta">
-          <span class="file-label">
-            Browse
-          </span>
+  <div class="file has-name is-primary is-light is-right is-fullwidth">
+    <label class="file-label">
+      <input
+        class="file-input"
+        type="file"
+        name="resume"
+        @change="handleChangeFile"
+        accept="text/csv"
+      />
+      <span class="file-cta">
+        <span class="file-label">
+          Browse
         </span>
-        <span class="file-name">
-          <span v-if="files && files.length">
-            {{ files[0].name }}
-          </span>
-          <span v-else>
-            Select a CSV file
-          </span>
+      </span>
+      <span class="file-name">
+        <span v-if="files && files.length">
+          {{ files[0].name }}
         </span>
-      </label>
-    </div>
+        <span v-else>
+          Select a CSV file
+        </span>
+      </span>
+    </label>
   </div>
 </template>
 
@@ -47,8 +45,9 @@ export default {
     },
 
     parseFile(file) {
-      const reader = new FileReader();
+      this.$store.dispatch("updateFileName", file.name);
 
+      const reader = new FileReader();
       reader.onload = e => this.$store.dispatch("processFile", e.target.result);
       reader.readAsText(file);
     }

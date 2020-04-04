@@ -1,6 +1,17 @@
+import { state as initialState } from "./state";
+
 const mutations = {
-  parseFile(state, payload) {
-    state.file = payload;
+  setFileData(state, payload) {
+    state.file.data = payload;
+  },
+  setFileName(state, payload) {
+    state.file.name = payload;
+  },
+  setActiveEnty(state, payload) {
+    state.file.active = payload;
+  },
+  clearAll(state) {
+    state.file = initialState;
   }
 };
 

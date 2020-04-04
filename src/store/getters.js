@@ -1,11 +1,8 @@
-import { orderBy } from "lodash";
 const getters = {
-  fileData: state => state.file,
+  fileData: state => state.file.data,
+  fileName: state => state.file.name,
   paginateFile: state => (pageSize, pageNumber) =>
-    orderBy(state.file, "id", "desc").slice(
-      (pageNumber - 1) * pageSize,
-      pageNumber * pageSize
-    )
+    state.file.data.slice((pageNumber - 1) * pageSize, pageNumber * pageSize)
 };
 
 export default getters;

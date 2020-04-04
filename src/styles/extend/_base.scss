@@ -9,9 +9,9 @@ html,body {
 }
 
 .table {
-  thead {
-    th {
-      background-color: #f9fbfd;
+  thead, tfoot {
+    th, td {
+      background-color: $mist;
       text-transform: uppercase;
       font-size: 1rem;
       font-weight: 600;
@@ -23,11 +23,11 @@ html,body {
   tbody {
     tr {
       &:hover {
-        background-color: #f9fbfd;
+        background-color: $mist;
       }
 
       &:nth-child(even) {
-        background-color: #f9fbfd;
+        background-color: $mist;
       }
 
       td {
@@ -36,6 +36,13 @@ html,body {
         color: $black-ter;
         vertical-align: middle;
       }
+    }
+  }
+
+  tfoot {
+    td {
+      border-top-width: 1px;
+      border-bottom: 0;
     }
   }
 }
@@ -66,5 +73,11 @@ html,body {
 
   &:after {
     right: 2px;
+  }
+}
+
+.buttons {
+  &.are-right-aligned {
+    justify-content: flex-end;
   }
 }

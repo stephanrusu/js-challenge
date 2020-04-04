@@ -6,7 +6,7 @@ const actions = {
       header: true,
       complete(results) {
         let file = results.data;
-        commit("parseFile", file);
+        commit("setFileData", file);
       },
       error(errors) {
         if (!errors.length) {
@@ -16,6 +16,9 @@ const actions = {
         }
       }
     });
+  },
+  updateFileName({ commit }, payload) {
+    commit("setFileName", payload);
   }
 };
 

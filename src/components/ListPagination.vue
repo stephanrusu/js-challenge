@@ -213,3 +213,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.pagination-link {
+  &.is-current {
+    background-color: #eef6fc;
+    color: #1d72aa;
+  }
+}
+</style>

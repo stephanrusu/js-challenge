@@ -1,5 +1,9 @@
 const state = {
-  file: []
+  file: {
+    name: "",
+    data: [],
+    active: {}
+  }
 };
 
 export default state;

@@ -28,12 +28,25 @@
             {{ entry }}
           </td>
           <td>
-            <button class="button is-transparent is-small">
-              <span class="icon-ellipsis"></span>
-            </button>
+            <div class="buttons are-small are-right-aligned">
+              <button class="button is-info is-light">
+                Edit
+              </button>
+            </div>
           </td>
         </tr>
       </tbody>
+      <tfoot>
+        <tr>
+          <td
+            v-for="(header, index) in Object.keys(fileData[0])"
+            :key="`header-${index}`"
+          >
+            {{ header }}
+          </td>
+          <td></td>
+        </tr>
+      </tfoot>
     </table>
     <list-pagination
       v-if="total > perPage"
