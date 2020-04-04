@@ -38,8 +38,11 @@ const actions = {
     commit("setActiveIndex", -1);
   },
 
-  updateEntryData({ commit }, payload) {
-    commit("setFileData", payload);
+  updateEntryData({ commit, state }, payload) {
+    let newData = [...state.file.data];
+
+    newData[state.file.activeIndex] = Object.assign({}, payload);
+    commit("setFileData", newData);
   }
 };
 

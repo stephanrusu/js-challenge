@@ -6,7 +6,7 @@
         type="file"
         name="resume"
         @change="handleChangeFile"
-        accept="text/csv"
+        accept="text/csv, application/csv"
       />
       <span class="file-cta">
         <span class="file-label">
